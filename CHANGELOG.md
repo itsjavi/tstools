@@ -1,5 +1,21 @@
 
 
+## v0.7.2
+
+[compare changes](https://github.com/itsjavi/tstools/compare/v0.7.1...v0.7.2)
+
+### 🩹 Fixes
+
+- Add support for numeric and string conditionals ([438896f](https://github.com/itsjavi/tstools/commit/438896f))
+
+### ❤️ Contributors
+
+- Javi Aguilar
+
+
+
+
+
 ## v0.7.1
 
 [compare changes](https://github.com/itsjavi/tstools/compare/v0.7.0...v0.7.1)
