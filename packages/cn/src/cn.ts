@@ -1,4 +1,4 @@
-import type { CnClassArg } from './types'
+import type { CnClassArg, CnClassCondition, CnClassName } from './types'
 
 /**
  * A utility for conditionally joining classNames together.
@@ -18,21 +18,33 @@ import type { CnClassArg } from './types'
  */
 export function cn(...classNames: CnClassArg[]): string {
   return classNames
-    .flatMap((arg) => {
-      if (
-        Array.isArray(arg) &&
-        arg.length >= 2 &&
-        (typeof arg[0] === 'boolean' || arg[0] === undefined || arg[0] === null)
-      ) {
+    .flatMap((arg): Array<boolean | CnClassName> | boolean | CnClassName => {
+      if (Array.isArray(arg) && arg.length >= 2) {
         if (arg.length > 2) {
-          const [condition, valueIfTruthy, ...valuesIfFalsy] = arg
+          const [valueIfTruthy, condition, elseValue] = arg
 
-          return condition ? valueIfTruthy : valuesIfFalsy
+          return condition ? valueIfTruthy : elseValue
         }
 
-        const [condition, valueIfTruthy] = arg
+        const [valueIfTruthy, condition] = arg
 
         return condition ? valueIfTruthy : undefined
+      }
+
+      if (typeof arg === 'object') {
+        if (arg === null) {
+          return []
+        }
+
+        return Object.entries(arg).map(([valueIfTruthy, value]: [string, string | [CnClassCondition, string]]) => {
+          if (Array.isArray(value)) {
+            const [condition, elseValue] = value
+
+            return condition ? valueIfTruthy : elseValue
+          }
+
+          return value ? valueIfTruthy : undefined
+        })
       }
 
       return arg
