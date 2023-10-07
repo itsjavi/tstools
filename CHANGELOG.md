@@ -1,5 +1,21 @@
 
 
+## v0.7.1
+
+[compare changes](https://github.com/itsjavi/tstools/compare/v0.7.0...v0.7.1)
+
+### 🩹 Fixes
+
+- **cn:** Support arrays of class names ([bf42267](https://github.com/itsjavi/tstools/commit/bf42267))
+
+### ❤️ Contributors
+
+- Javi Aguilar
+
+
+
+
+
 ## v0.7.0
 
 [compare changes](https://github.com/itsjavi/tstools/compare/v0.6.0...v0.7.0)
