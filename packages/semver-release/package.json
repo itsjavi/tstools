@@ -1,6 +1,6 @@
 {
   "name": "@itsjavi/semver-release",
-  "version": "0.4.3",
+  "version": "0.6.0",
   "description": "Changelog generator and semver release tool for PNPM monorepos",
   "homepage": "https://github.com/itsjavi/tstools#readme",
   "bugs": {
