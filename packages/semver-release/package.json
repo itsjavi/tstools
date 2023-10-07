@@ -1,0 +1,50 @@
+{
+  "name": "@itsjavi/semver-release",
+  "version": "0.4.3",
+  "description": "Changelog generator and semver release tool for PNPM monorepos",
+  "homepage": "https://github.com/itsjavi/tstools#readme",
+  "bugs": {
+    "url": "https://github.com/itsjavi/tstools/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itsjavi/tstools.git"
+  },
+  "license": "MIT",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./styles.css": "./dist/style.css"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "bin": "./dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch --clean=false",
+    "typelint": "tsc --noEmit"
+  },
+  "dependencies": {
+    "changelogen": "^0.5.5",
+    "commander": "^11.0.0",
+    "semver": "^7.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.7",
+    "@types/semver": "^7.5.2",
+    "tsup": "^7.2.0",
+    "typescript": "^5.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
