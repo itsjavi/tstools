@@ -1,4 +1,4 @@
-# itsjavi's JS/TypeScript tools
+# @itsjavi's JS/TypeScript tools
 
 Various tools for JS/TS development.
 
