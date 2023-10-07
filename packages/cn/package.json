@@ -1,6 +1,6 @@
 {
   "name": "@itsjavi/cn",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A very tiny but powerful classnames utility",
   "homepage": "https://github.com/itsjavi/tstools#readme",
   "bugs": {
