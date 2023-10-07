@@ -28,4 +28,6 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          pnpm build
+          pnpm install
           pnpm version:publish-notes
