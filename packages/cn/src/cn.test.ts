@@ -38,4 +38,8 @@ describe('cn (classNames)', () => {
   it('should handle empty and whitespace-only class names', () => {
     expect(cn('', ' ', 'foo', '   ', 'bar')).toBe('foo bar')
   })
+
+  it('support arrays of class names', () => {
+    expect(cn(['foo', 'bar'], ['baz'])).toBe('foo bar baz')
+  })
 })

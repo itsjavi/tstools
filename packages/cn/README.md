@@ -1,8 +1,9 @@
 # @itsjavi/cn
 
 [![npm version][npm-version-src]][npm-version-href]
-[![npm downloads][npm-downloads-src]][npm-downloads-href] [![bundle][bundle-src]][bundle-href]
-[![Codecov][codecov-src]][codecov-href] [![License][license-src]][license-href]
+[![npm downloads][npm-downloads-src]][npm-downloads-href]
+[![Codecov][codecov-src]][codecov-href]
+[![License][license-src]][license-href]
 [![JSDocs][jsdocs-src]][jsdocs-href]
 
 ## Installation
@@ -30,9 +31,6 @@ pnpm add @itsjavi/cn
 [codecov-src]:
   https://img.shields.io/codecov/c/gh/itsjavi/tstools/main?style=flat&colorA=18181B&colorB=F0DB4F
 [codecov-href]: https://codecov.io/gh/itsjavi/tstools
-[bundle-src]:
-  https://img.shields.io/bundlephobia/minzip/@itsjavi/cn?style=flat&colorA=18181B&colorB=F0DB4F
-[bundle-href]: https://bundlephobia.com/result?p=@itsjavi/cn
 [license-src]:
   https://img.shields.io/github/license/itsjavi/tstools.svg?style=flat&colorA=18181B&colorB=F0DB4F
 [license-href]: https://github.com/itsjavi/tstools/blob/main/LICENSE

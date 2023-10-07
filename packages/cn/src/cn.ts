@@ -19,7 +19,16 @@ import type { CnClassArg, CnClassCondition, CnClassName } from './types'
 export function cn(...classNames: CnClassArg[]): string {
   return classNames
     .flatMap((arg): Array<boolean | CnClassName> | boolean | CnClassName => {
+      if (Array.isArray(arg) && arg.length < 2) {
+        return arg
+      }
+
       if (Array.isArray(arg) && arg.length >= 2) {
+        const isConditional = typeof arg[1] === 'boolean' || arg[1] === undefined || arg[1] === null
+        if (!isConditional) {
+          return arg
+        }
+
         if (arg.length > 2) {
           const [valueIfTruthy, condition, elseValue] = arg
 

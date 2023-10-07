@@ -29,9 +29,9 @@ jobs:
       - name: 'Check code quality'
         uses: ./.github/actions/check-quality
 
-      ## Uncomment the following lines to enable Codecov
-      # - name: Upload coverage reports to Codecov
-      #   uses: codecov/codecov-action@v3
-      #   with:
-      #     directory: ./
-      #     token: ${{ secrets.CODECOV_TOKEN }}
+      # Uncomment the following lines to enable Codecov
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          directory: ./
+          token: ${{ secrets.CODECOV_TOKEN }}
