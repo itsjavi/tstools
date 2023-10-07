@@ -18,13 +18,14 @@ import type { CnClassArg, CnClassCondition, CnClassName } from './types'
  */
 export function cn(...classNames: CnClassArg[]): string {
   return classNames
-    .flatMap((arg): Array<boolean | CnClassName> | boolean | CnClassName => {
+    .flatMap((arg): Array<boolean | number | CnClassName> | boolean | number | CnClassName => {
       if (Array.isArray(arg) && arg.length < 2) {
         return arg
       }
 
       if (Array.isArray(arg) && arg.length >= 2) {
-        const isConditional = typeof arg[1] === 'boolean' || arg[1] === undefined || arg[1] === null
+        const isConditional =
+          typeof arg[1] === 'number' || typeof arg[1] === 'boolean' || arg[1] === undefined || arg[1] === null
         if (!isConditional) {
           return arg
         }
@@ -45,15 +46,21 @@ export function cn(...classNames: CnClassArg[]): string {
           return []
         }
 
-        return Object.entries(arg).map(([valueIfTruthy, value]: [string, string | [CnClassCondition, string]]) => {
-          if (Array.isArray(value)) {
-            const [condition, elseValue] = value
+        return Object.entries(arg).map(
+          ([valueIfTruthy, value]: [string, string | CnClassCondition | [string | CnClassCondition, CnClassName]]) => {
+            if (Array.isArray(value)) {
+              const [condition, elseValue] = value
 
-            return condition ? valueIfTruthy : elseValue
-          }
+              return condition ? valueIfTruthy : elseValue
+            }
 
-          return value ? valueIfTruthy : undefined
-        })
+            return value ? valueIfTruthy : undefined
+          },
+        )
+      }
+
+      if (arg === true) {
+        return ''
       }
 
       return arg
