@@ -73,10 +73,10 @@ importers:
         version: 7.5.4
     devDependencies:
       '@types/node':
-        specifier: ^20.5.7
+        specifier: ^20.8.3
         version: 20.8.3
       '@types/semver':
-        specifier: ^7.5.2
+        specifier: ^7.5.3
         version: 7.5.3
       tsup:
         specifier: ^7.2.0
